@@ -4,5 +4,7 @@ class Queen
 	def try(n)
 		@n = n
 		@board = Array.new(1)
+		@board.pop
 	end
+
 end

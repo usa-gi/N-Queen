@@ -9,6 +9,10 @@ class Queen
 	end
 	def try
 		for y in (0..@n-1)
+			put_able(y)
 		end
+	end
+	def put_able(n)
+
 	end
 end

@@ -7,7 +7,7 @@ class Queen
 		@board.pop
 
 	end
-	def try(n)
+	def try
 	end
 
 end

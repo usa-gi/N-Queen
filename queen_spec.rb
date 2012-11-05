@@ -2,7 +2,7 @@
 require_relative 'queen'
 describe "N-Queen"	do
 	before(:each) do
-		@queen = Queen.new
+		@queen = Queen.new(1)
 	end
 	describe "N = 1 のとき"	do
 		before do

@@ -12,6 +12,9 @@ describe "N-Queen"	do
 			it "盤の配置（Board）は初期化されているか？" do
 				@queen.board.should == []
 			end
+			it "tryメソッドを実行して成功するか？" do
+				@queen.try
+			end
 		end
 	end
 end

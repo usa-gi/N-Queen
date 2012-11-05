@@ -7,6 +7,9 @@ describe "N-Queen"	do
 			@queen.try(1)
 		end
 		it "盤の配置（Board）は初期化されているか？" do
+			@queen = Queen.new
+			@queen.try(1)
+
 			@queen.board.should == []
 		end
 	end

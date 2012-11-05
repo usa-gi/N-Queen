@@ -8,8 +8,7 @@ class Queen
 
 	end
 	def try
-		for x in (0..@n-1)
+		for y in (0..@n-1)
 		end
 	end
-
 end

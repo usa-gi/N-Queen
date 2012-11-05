@@ -12,7 +12,11 @@ describe "N-Queen"	do
 			it "盤の配置（Board）は初期化されているか？" do
 				@queen.board.should == []
 			end
-			it "tryメソッドを実行して成功するか？" do
+		end
+		describe "put_ableメソッドを呼んだとき"	do
+
+			it "put_ableメソッドは規定回数呼ばれるか？" do
+				@queen.should_receive(:put_able).exactly(1)
 				@queen.try
 			end
 		end

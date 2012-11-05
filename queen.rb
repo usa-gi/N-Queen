@@ -3,7 +3,7 @@ class Queen
 	attr_accessor :board
 	def initialize(n)
 		@n = n
-		@board = Array.new(1)
+		@board = Array.new(n)
 		@board.pop
 
 	end

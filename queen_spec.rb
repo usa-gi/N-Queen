@@ -13,6 +13,5 @@ describe "N-Queen"	do
 				@queen.board.should == []
 			end
 		end
-
 	end
 end

@@ -18,7 +18,7 @@ class Queen
 	end
 	def put_first(x)
 		put_able_check?(x,0)
-
+		put(x,0)
 	end
 
 	#座標（x,y）にQがおけるかどうかを判定する

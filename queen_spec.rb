@@ -21,7 +21,7 @@ describe "N-Queen"	do
 		end
 		describe "put_ableメソッドを呼んだとき"	do
 			it "put_ableメソッドは規定回数呼ばれるか？" do
-				@queen.should_receive(:put_able).exactly(1)
+				@queen.should_receive(:put_able_check?).exactly(1)
 				@queen.try
 			end
 		end

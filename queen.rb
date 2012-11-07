@@ -12,6 +12,10 @@ class Queen
 			put_able(y)
 		end
 	end
+	def put_first(x)
+		put_able_check?(x,0)
+
+	end
 	def put_able(n)
 
 	end

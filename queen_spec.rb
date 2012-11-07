@@ -56,10 +56,12 @@ describe "N-Queen"	do
 				end
 				it "左斜め線上（/[スラッシュ]方向）にすでにQがあるとき,置けない（false）を返すか？" do
 					@queen.board = [1]
+					@queen.left_slash = [1]
 					@queen.put_able_check?(0,1).should be_false
 				end
 				it "右斜め線上（\\[バックスラッシュ]方向）にすでにQがあるとき,置けない（false）を返すか？" do
 					@queen.board = [0]
+					@queen.right_slash = [0]
 					@queen.put_able_check?(1,1).should be_false
 				end
 			end

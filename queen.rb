@@ -16,6 +16,9 @@ class Queen
 		put_able_check?(x,0)
 
 	end
+	def put_able_check?(x,y)
+
+	end
 	def put_able(n)
 
 	end

@@ -14,9 +14,19 @@ describe "N-Queen"	do
 			end
 		end
 		describe "put_firstメソッドを呼んだとき"	do
-			it "一手目のy=0,x=0で置けるか判定するput_ableメソッドを呼び出すか？" do
-				@queen.should_receive(:put_able_check?).at_least(1)
-				@queen.put_first(0)
+			describe "一手目がx=0,y=0のとき"	do
+				it "Qを置けるか判定するput_ableメソッドを呼び出すか？" do
+					@queen.should_receive(:put_able_check?).at_least(1)
+					@queen.put_first(0)
+				end
+				it "Qを置くputメソッドを呼び出すか？" do
+					@queen.should_receive(:put).exact(1)
+					@queen.put_first(0)
+				end
+				it "Qは（0,0）におかれるか？" do
+					@queen.put_first(0)
+					@queen.board.should =[0]
+				end
 			end
 		end
 		describe "put_able_check?メソッドを呼んだとき"	do

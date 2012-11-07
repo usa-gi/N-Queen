@@ -37,7 +37,7 @@ describe "N-Queen"	do
 			end
 		end
 	end
-	describe "N = 1 のとき"	do
+	describe "N = 2 のとき"	do
 		before(:each) do
 			@queen = Queen.new(2)
 		end

@@ -21,9 +21,14 @@ class Queen
 
 	end
 	def put_able_check?(x,y)
+		# x軸方向にQが存在しない かつ
+		# y軸方向にQが存在しない かつ
+		# 左斜め方向にQが存在しない かつ
+		# 右斜め方向にQが存在しない
 		if @board[y] == nil \
 		&& @board.index(x) == nil \
-		&& @left_slash.index(x+y) == nil then # 左斜め方向にQが存在しない
+		&& @left_slash.index(x+y) == nil \
+		&& @right_slash.index(x-y) == nil then 
 			return true
 		end
 		false

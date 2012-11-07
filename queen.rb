@@ -23,7 +23,6 @@ class Queen
 	def put_able_check?(x,y)
 		if @board[y] == nil \
 		&& @left_slash.index(x+y) == nil then # 左斜め方向にQが存在しない
-#		if @board[y] == nil then
 			return true
 		end
 		false

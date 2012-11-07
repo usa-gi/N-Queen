@@ -117,5 +117,14 @@ describe "N-Queen"	do
 			end
 		end
 	end
+	describe "N = 4 のとき"	do
+		before(:each) do
+			@queen = Queen.new(4)
+		end
+		describe "put_ableメソッドを呼んだとき"	do
+		end
+
+	end
+
 
 end

@@ -37,4 +37,33 @@ describe "N-Queen"	do
 			end
 		end
 	end
+	describe "N = 1 のとき"	do
+		before(:each) do
+			@queen = Queen.new(2)
+		end
+		describe "put_able_check?メソッドを呼んだとき"	do
+			describe "一手目のy=0,x=0で置けるか判定するとき、" do
+				it "置ける（true）を返すか？" do
+					@queen.put_able_check?(0,0).should be_true
+				end
+				it "y列にすでにQがあるとき,置けない（false）を返すか？" do
+					@queen.board = [1]
+					@queen.put_able_check?(0,0).should be_false
+				end
+				it "x列にすでにQがあるとき,置けない（false）を返すか？" do
+					@queen.board = [1]
+					@queen.put_able_check?(1,1).should be_false
+				end
+				it "左斜め線上（/[スラッシュ]方向）にすでにQがあるとき,置けない（false）を返すか？" do
+					@queen.board = [1]
+					@queen.put_able_check?(0,1).should be_false
+				end
+				it "右斜め線上（\\[バックスラッシュ]方向）にすでにQがあるとき,置けない（false）を返すか？" do
+					@queen.board = [0]
+					@queen.put_able_check?(1,1).should be_false
+				end
+			end
+		end
+	end
+
 end

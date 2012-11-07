@@ -20,6 +20,8 @@ class Queen
 		put_able_check?(x,0)
 
 	end
+
+	#座標（x,y）にQがおけるかどうかを判定する
 	def put_able_check?(x,y)
 		# x軸方向にQが存在しない かつ
 		# y軸方向にQが存在しない かつ

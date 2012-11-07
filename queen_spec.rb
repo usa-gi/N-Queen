@@ -15,13 +15,13 @@ describe "N-Queen"	do
 		end
 		describe "put_firstメソッドを呼んだとき"	do
 			it "一手目のy=0,x=0で置けるか判定するput_ableメソッドを呼び出すか？" do
-				@queen.should_receive(:put_able).less(1)
+				@queen.should_receive(:put_able_check?).at_least(1)
 				@queen.put_first(0)
 			end
 		end
 		describe "put_ableメソッドを呼んだとき"	do
 			it "put_ableメソッドは規定回数呼ばれるか？" do
-				@queen.should_receive(:put_able_check?).exactly(1)
+				@queen.should_receive(:put_able).exactly(1)
 				@queen.try
 			end
 		end

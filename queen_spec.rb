@@ -41,6 +41,28 @@ describe "N-Queen"	do
 		before(:each) do
 			@queen = Queen.new(2)
 		end
+		describe "一手目がx=0のとき"	do
+			describe "put_able_check?メソッドを呼んだとき"	do
+				it "置ける（true）を返すか？" do
+					@queen.put_able_check?(0,0).should be_true
+				end
+			end
+		end
+		describe "一手目がx=1のとき"	do
+			describe "put_able_check?メソッドを呼んだとき"	do
+				it "置ける（true）を返すか？" do
+					@queen.put_able_check?(0,1).should be_true
+				end
+			end
+		end
+		describe "一手目がx=2のとき"	do
+			describe "put_able_check?メソッドを呼んだとき"	do
+				it "置ける（true）を返すか？" do
+					@queen.put_able_check?(0,2).should be_true
+				end
+			end
+		end
+
 		describe "put_able_check?メソッドを呼んだとき"	do
 			describe "一手目のy=0,x=0で置けるか判定するとき、" do
 				it "置ける（true）を返すか？" do

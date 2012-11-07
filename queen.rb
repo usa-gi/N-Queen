@@ -17,7 +17,10 @@ class Queen
 
 	end
 	def put_able_check?(x,y)
-		return true
+		if @board[y] == nil then
+			return true
+		end
+		false
 	end
 	def put_able(n)
 

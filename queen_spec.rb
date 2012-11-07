@@ -47,6 +47,12 @@ describe "N-Queen"	do
 					@queen.put_able_check?(0,0).should be_true
 				end
 			end
+			describe "putメソッドを呼んだとき"	do
+				it "(0,0)に置くか？" do
+					@queen.put(0,0)
+					@queen.board.should == [0]
+				end
+			end
 		end
 		describe "一手目がx=1のとき"	do
 			describe "put_able_check?メソッドを呼んだとき"	do
@@ -54,11 +60,23 @@ describe "N-Queen"	do
 					@queen.put_able_check?(0,1).should be_true
 				end
 			end
+			describe "putメソッドを呼んだとき"	do
+				it "(0,1)に置くか？" do
+					@queen.put(0,1)
+					@queen.board.should == [1]
+				end
+			end
 		end
 		describe "一手目がx=2のとき"	do
 			describe "put_able_check?メソッドを呼んだとき"	do
 				it "置ける（true）を返すか？" do
 					@queen.put_able_check?(0,2).should be_true
+				end
+			end
+			describe "putメソッドを呼んだとき"	do
+				it "(0,2)に置くか？" do
+					@queen.put(0,2)
+					@queen.board.should == [2]
 				end
 			end
 		end

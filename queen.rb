@@ -16,11 +16,15 @@ class Queen
 			put_able(y)
 		end
 	end
+	#y座標=nのときにQをおけるかチェック
+	def put_able(n)
+
+	end
+	#一手めを(x,0におけるかチェックし、置く)
 	def put_first(x)
 		put_able_check?(x,0)
 		put(x,0)
 	end
-
 	#座標（x,y）にQがおけるかどうかを判定する
 	def put_able_check?(x,y)
 		# x軸方向にQが存在しない かつ
@@ -37,8 +41,5 @@ class Queen
 	end
 	def put(x,y)
 		@board[y] = x
-	end
-	def put_able(n)
-
 	end
 end

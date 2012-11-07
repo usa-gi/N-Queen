@@ -23,6 +23,10 @@ describe "N-Queen"	do
 			it "一手目のy=0,x=0で置けるか判定するとき、置ける（true）を返すか？" do
 				@queen.put_able_check?(0,0).should be_true
 			end
+			it "一手目のy=0,x=0で置けるか判定するとき、y列にすでにQがあるとき置けない（false）を返すか？" do
+				@queen.board = [1]
+				@queen.put_able_check?(0,0).should be_false
+			end
 		end
 		describe "put_ableメソッドを呼んだとき"	do
 			it "put_ableメソッドは規定回数呼ばれるか？" do

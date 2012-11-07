@@ -35,6 +35,9 @@ class Queen
 		end
 		false
 	end
+	def put(x,y)
+		@board[y] = x
+	end
 	def put_able(n)
 
 	end

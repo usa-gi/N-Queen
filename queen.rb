@@ -4,8 +4,7 @@ class Queen
 	def initialize(n)
 		@n = n
 
-		@board = Array.new(n)
-		@board.pop # = []
+		@board = []
 
 		@left_slash  = [] # /方向
 		@right_slash = [] #\方向
@@ -16,9 +15,14 @@ class Queen
 			put_able(y)
 		end
 	end
-	#y座標=nのときにQをおけるかチェック
-	def put_able(n)
-
+	#y座標=yのときにQをおけるかチェック
+	def put_able(y)
+		x = 0
+		while !put_able_check?(x,y)
+			x += 1
+		end
+		#Qを置ける場所が見つかった！
+		put(x,y)
 	end
 	#一手めを(x,0におけるかチェックし、置く)
 	def put_first(x)

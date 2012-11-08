@@ -170,6 +170,29 @@ describe "N-Queen"	do
 			end
 		end
 	end
+	describe "N = 4 かつ 共通処理のとき"	do
+		describe "removeメソッドを呼んだとき" do
+			before(:each) do
+				@queen = Queen.new(4)
+				@queen.board = [0,2,4]
+				@queen.left_slash  = [0,3,6]
+				@queen.right_slash = [0,1,2]
+				@matrix = @queen.remove
+			end
+			it "盤（@board）からQが除去されるか？" do
+				@queen.board.should == [0,2]
+			end
+			it "左斜め線（@left_slash）からQが除去されるか？" do
+				@queen.left_slash.should == [0,3]
+			end
+			it "右斜め線（@right_slash）からQが除去されるか？" do
+				@queen.right_slash.should == [0,1]
+			end
+			it "取り除いた座標を教えてくれるか？" do
+				@matrix.should === 4
+			end
+		end
+	end
 
 
 end

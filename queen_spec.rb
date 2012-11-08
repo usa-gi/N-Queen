@@ -143,7 +143,7 @@ describe "N-Queen"	do
 					@queen.board.should == [3,0,2]
 				end
 			end
-			describe "４手目が正常におけるか？" do
+			describe "４手目が正常におけないか？" do
 				it "(1手目が(0,0))" do
 					@queen.put_first(0)
 					@queen.put_able(1)

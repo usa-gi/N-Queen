@@ -118,38 +118,12 @@ describe "N-Queen"	do
 			@queen = Queen.new(4)
 		end
 		describe "put_ableメソッドを呼んだとき"	do
-			it "1手目が正常におけるか？" do
-				@queen.put_able(0)
-				@queen.board.should == [0]
-			end
-			describe "２手目が正常におけるか？" do
-				it "(1手目が(0,0))" do
-					@queen.put_first(0)
-					@queen.put_able(1)
-					@queen.board.should == [0,2]
-				end
-				it "(1手目が(1,0))" do
-					@queen.put_first(1)
-					@queen.put_able(1)
-					@queen.board.should == [1,3]
-				end
-				it "(1手目が(2,0))" do
-					@queen.put_first(2)
-					@queen.put_able(1)
-					@queen.board.should == [2,0]
-				end
-				it "(1手目が(3,0))" do
-					@queen.put_first(3)
-					@queen.put_able(1)
-					@queen.board.should == [3,0]
-				end
-			end
-			describe "３手目が正常におけるか？" do
+			describe "３手目まで正常におけるか？ #４手目ですべて手詰まりになる" do
 				it "(1手目が(0,0))" do
 					@queen.put_first(0)
 					@queen.put_able(1)
 					@queen.put_able(2)
-					@queen.board.should == [0,2,4]
+					@queen.board.should == [0,3,1]
 				end
 				it "(1手目が(1,0))" do
 					@queen.put_first(1)
@@ -157,15 +131,25 @@ describe "N-Queen"	do
 					@queen.put_able(2)
 					@queen.board.should == [1,3,0]
 				end
+				it "(1手目が(2,0))" do
+					@queen.put_first(2)
+					@queen.put_able(1)
+					@queen.put_able(2)
+					@queen.board.should == [2,0,3]
+				end
+				it "(1手目が(3,0)" do
+					@queen.put_first(3)
+					@queen.put_able(1)
+					@queen.board.should == [3,0,2]
+				end
 			end
 			describe "４手目が正常におけるか？" do
 				it "(1手目が(0,0))" do
-					pending "meet dead end!!!"
 					@queen.put_first(0)
 					@queen.put_able(1)
 					@queen.put_able(2)
 					@queen.put_able(3)
-					@queen.board.should == [0,2,4,1]
+					@queen.board.should == [0,3,1]
 				end
 			end
 		end

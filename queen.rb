@@ -44,5 +44,7 @@ class Queen
 	end
 	def put(x,y)
 		@board[y] = x
+		@left_slash  << (x+y)
+		@right_slash << (x-y)
 	end
 end

@@ -16,19 +16,21 @@ class Queen
 		end
 	end
 	#y座標=yのときにQをおけるかチェック
-	def put_able(y,x=0)
-		x = 0
+	def put_able(y,n=0)
+		x = n
 		while !put_able_check?(x,y) && (x < @n)
 			x += 1
 		end
 		if x < @n then
 			#Qを置ける場所が見つかった！
 			put(x,y)
-			put_able(y+1)
+				put_able(y+1) if @board.size < (@n-1)
 		else
 			#Qを置ける場所が見つからなかった
-			x = remove
-			put_able(y,x)
+			if @board.size > 1 then
+				x = remove
+				put_able(y,x)
+			end
 		end
 	end
 	#一手めを(x,0におけるかチェックし、置く)
@@ -50,7 +52,7 @@ class Queen
 		false
 	end
 	def put(x,y)
-		@board[y] = x
+		@board << x
 		@left_slash  << (x+y)
 		@right_slash << (x-y)
 	end

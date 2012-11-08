@@ -128,6 +128,35 @@ describe "N-Queen"	do
 					@queen.put_able(1)
 					@queen.board.should == [0,2]
 				end
+				it "(1手目が(1,0))" do
+					@queen.put_first(1)
+					@queen.put_able(1)
+					@queen.board.should == [1,3]
+				end
+				it "(1手目が(2,0))" do
+					@queen.put_first(2)
+					@queen.put_able(1)
+					@queen.board.should == [2,0]
+				end
+				it "(1手目が(3,0))" do
+					@queen.put_first(3)
+					@queen.put_able(1)
+					@queen.board.should == [3,0]
+				end
+			end
+			describe "３手目が正常におけるか？" do
+				it "(1手目が(0,0))" do
+					@queen.put_first(0)
+					@queen.put_able(1)
+					@queen.put_able(2)
+					@queen.board.should == [0,2,4]
+				end
+				it "(1手目が(1,0))" do
+					@queen.put_first(1)
+					@queen.put_able(1)
+					@queen.put_able(2)
+					@queen.board.should == [1,3,0]
+				end
 			end
 		end
 	end

@@ -118,6 +118,17 @@ describe "N-Queen"	do
 			@queen = Queen.new(4)
 		end
 		describe "put_ableメソッドを呼んだとき"	do
+			it "1手目が正常におけるか？" do
+				@queen.put_able(0)
+				@queen.board.should == [0]
+			end
+			describe "２手目が正常におけるか？" do
+				it "(1手目が(0,0))" do
+					@queen.put_first(0)
+					@queen.put_able(1)
+					@queen.board.should == [0,2]
+				end
+			end
 		end
 	end
 

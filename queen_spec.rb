@@ -160,11 +160,12 @@ describe "N-Queen"	do
 			end
 			describe "４手目が正常におけるか？" do
 				it "(1手目が(0,0))" do
+					pending "meet dead end!!!"
 					@queen.put_first(0)
 					@queen.put_able(1)
 					@queen.put_able(2)
 					@queen.put_able(3)
-					@queen.board.should == [0,2,4,?]
+					@queen.board.should == [0,2,4,1]
 				end
 			end
 		end

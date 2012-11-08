@@ -16,15 +16,20 @@ class Queen
 		end
 	end
 	#y座標=yのときにQをおけるかチェック
-	def put_able(y)
+	def put_able(y,x=0)
 		x = 0
-		while !put_able_check?(x,y)
+		while !put_able_check?(x,y) && (x < @n)
 			x += 1
 		end
-		#Qを置ける場所が見つからなかった
-		
-		#Qを置ける場所が見つかった！
-		put(x,y)
+		if x < @n then
+			#Qを置ける場所が見つかった！
+			put(x,y)
+			put_able(y+1)
+		else
+			#Qを置ける場所が見つからなかった
+			x = remove
+			put_able(y,x)
+		end
 	end
 	#一手めを(x,0におけるかチェックし、置く)
 	def put_first(x)

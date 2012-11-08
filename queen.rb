@@ -21,6 +21,8 @@ class Queen
 		while !put_able_check?(x,y)
 			x += 1
 		end
+		#Qを置ける場所が見つからなかった
+		
 		#Qを置ける場所が見つかった！
 		put(x,y)
 	end
@@ -47,4 +49,11 @@ class Queen
 		@left_slash  << (x+y)
 		@right_slash << (x-y)
 	end
+	def remove
+		@left_slash.pop
+		@right_slash.pop
+		x = @board.pop
+		x
+	end
+
 end
